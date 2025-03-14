@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загрузка файла</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Загрузка файла для подсчёта</h1>
+        <p class="department-info">Отдел: {{ department }}</p>
+        <form action="/process-file/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <input type="hidden" name="department" value="{{ department }}">
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+</body>
+</html>

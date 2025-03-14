@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загрузка файла для подсчета оценки сотрудников ЛК</title>
+    <link rel="stylesheet" href="/static/styles.css"> <!-- Подключаем внешний CSS файл -->
+</head>
+<body>
+    <div class="header-banner">
+        <span>Система для оценки сотрудников</span>
+        <div>
+            <!-- <a href="/uploadSecond" class="button-to-upload">Загрузить файл</a> -->
+            <a href="/" class="button-to-main">Подсчет оценки отделов</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Загрузка файла для подсчета оценки сотрудников ЛК</h1>
+
+        <form action="/calculate-department-score-second/" method="post" enctype="multipart/form-data">
+            <label for="department">Выберите отдел:</label>
+            <select name="department" id="department" required>
+                <option value="" disabled selected>Выберите отдел</option>
+                {% for department in departments %}
+                    <option value="{{ department }}">{{ department }}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <label for="file">Выберите файл для загрузки:</label>
+            <input type="file" name="file" id="file" required><br><br>
+
+            <button type="submit">Загрузить файл</button>
+        </form>
+
+        {% if department %}
+            <div class="department-info">
+                <h2>Вопросы для отдела {{ department }}:</h2>
+                <ul>
+                    {% for question in department_questions %}
+                        <li>{{ question }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
