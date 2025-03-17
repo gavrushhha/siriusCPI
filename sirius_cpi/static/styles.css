@@ -51,7 +51,7 @@ ul li {
 a {
     text-decoration: none;
     display: inline-block;
-    background: linear-gradient(135deg, #6c63ff, #4a47e0);
+    background: linear-gradient(135deg, #218838, #1e7e34);
     color: white;
     padding: 12px 25px;
     border-radius: 6px;
@@ -61,7 +61,7 @@ a {
 }
 
 a:hover {
-    background: linear-gradient(135deg, #5a55d8, #3a37b0);
+    background: linear-gradient(135deg, #218838, #1e7e34);
     transform: scale(1.05);
 }
 
@@ -162,7 +162,7 @@ button:hover {
     font-weight: bold;
 }
 
-.button-to-upload, .button-to-main {
+.button-to-upload {
     text-decoration: none;
     padding: 8px 15px;
     background-color: #07a17d;
@@ -170,7 +170,24 @@ button:hover {
     border-radius: 8px;
 }
 
-.button-to-upload:hover, .button-to-main:hover {
+.button-to-main {
+    background-color: #7ba2b5;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    margin-right: 40px; /* Сдвиг кнопки левее */
+    margin-left: 20px;
+}
+
+.button-to-main:hover {
+    background-color: #78909c;
+}
+
+.button-to-upload:hover {
     background-color: #0056b3;
 }
 
